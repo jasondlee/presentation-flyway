@@ -1,0 +1,54 @@
+- So what's the problem?
+    - What is Flyway
+        - How does it solve the problem?
+        - Licensing
+- How does it work
+    - Schema files
+        - Naming conventions
+        - Run in order
+    - Schema version table
+- Getting started
+    - CLI
+    - Maven
+    - Gradle
+    - Programmatic
+- Concepts
+    - Migrations
+    - Callbacks
+    - Commercial only
+        - Checks
+        - Error overrides
+        - Dry runs
+        - Baseline migrations
+- Migrations
+    - Types
+        - Versioned
+        - Repeatable
+        - Undo (Commercial)
+    - Languages
+        - SQL
+        - Java
+        - Script (Shell, batch, python -- commercial)
+- Callbacks
+    - Hooks
+        - beforeMigrate	Before Migrate runs
+        - beforeRepeatables	Before all repeatable migrations during Migrate
+        - beforeEachMigrate	Before every single migration during Migrate
+        - afterEachMigrate	After every single successful migration during Migrate
+        - afterEachMigrateError	After every single failed migration during Migrate
+        - afterMigrate	After successful Migrate runs
+        - afterMigrateApplied	After successful Migrate runs where at least one migration has been applied
+        - afterVersioned	After all versioned migrations during Migrate
+        - afterMigrateError After failed Migrate runs
+    - Languages
+        - SQL
+            - $INSTALL_DIR/sql
+            - beforeMigrate.sql, beforeEachMigrate.sql, etc
+        - Java
+            - Must implement the Callback interface
+            - Automatically scan db/callback package
+            - Scan locations can be specified by the flyway.callbacks configuration property
+- Integrations
+    - Quarkus
+    - Spring Boot
+
